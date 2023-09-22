@@ -251,3 +251,23 @@ penjelasan dari filter tersebut adalah kita melakukan filter packet yang menuju 
 apabila kita memeriksanya menggunakan netcat, kita akan mendapatkan flagnya:
 
 <img src="assets/soal 8/2.png">
+
+#### Soal 9
+
+<strong>Soal</strong>: Berikan kueri filter sehingga wireshark hanya mengambil paket yang berasal dari alamat 10.51.40.1 tetapi tidak menuju ke alamat 10.39.55.34!
+
+hal yang pertama dilakukan adalah membuka file soal6-9.pcapng dengan menggunakan wireshark dan membuka program netcat yang telah disediakan menggunakan linux terminal
+
+kita lakukan query sebagai berikut:
+
+```
+ip.src == 10.51.40.1 && ip.dst != 10.39.55.34
+```
+
+penjelasan dari query tersebut adalah kita memfilter semua packets yang berasal dari ip 10.51.40.1 dengan query <code>ip.src == 10.51.40.1</code> tetapi tidak dari ip 10.39.55.34 dengan query <code>ip.dst != 10.39.55.34</code> karena keduanya harus dipenuhi, maka kita menggunakan logical operator <code>&&</code> sehingga didapatkan query sebagai berikut:
+
+<img src="assets/soal 9/2.png">
+
+apabila kita memeriksanya menggunakan netcat, kita akan mendapatkan flagnya:
+
+<img src="assets/soal 9/1.png">
