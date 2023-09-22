@@ -195,3 +195,39 @@ Dari situ, apabila kita membuka layer HTTP dari paket tersebut (paket 1092 [meng
 apabila kita mengetesnya menggunakan netcat, kita akan mendapatkan flagnya
 
 <img src="assets/soal 2/7.png">
+
+#### Soal 3
+
+<strong>Soal</strong>: Dapin sedang belajar analisis jaringan. Bantulah Dapin untuk mengerjakan soal berikut
+
+hal yang pertama kita lakukan adalah membuka soal3.pcapng menggunakan wireshark kemudian membuka netcat program yang telah disediakan melalui terminal linux
+
+<strong>soal poin a</strong>: Berapa banyak paket yang tercapture dengan IP source maupun destination address adalah 239.255.255.250 dengan port 3702
+
+dari poin di atas kita melakukan display filter sebagai berikut
+
+```
+ip.addr == 239.255.255.250 && (tcp.port == 3702 or udp.port == 3702)
+```
+
+penjelasan dari filter diatas adalah kita mengcapture semua ip yang berasal dan menuju ke port <code>239.255.255.250</code> dengan filter <code>ip.addr == 239.255.255.250</code> kemudian karena kita menginginkan kondisi dimana filter mencakup filtter ip address sebelumnya dan yang menuju ke port 3702 dan karena hanya terdapat 2 macam transport layer dari port, yakni tcp dan udp kita mengcapture semua kemungkinan yang ada dengan <code>tcp.port == 3702 or udp.port == 3702</code> dan menggabungkannya menjadi seperti sebagai berikut:
+
+<img src="assets/soal 3/1.png">
+
+dari situ kita harus melihat ke bagian bawah tampilan wireshark dan kita akan mendapatkan sebagai berikut:
+
+<img src="assets/soal 3/2.png">
+
+apabila kita mengechecknya menggunakan program netcat pada poin a akan didapat hasil sebagai berikut:
+
+<img src="assets/soal 3/3.png">
+
+<strong>soal poin b</strong>: Protokol layer transport apa yang digunakan?
+
+Dari filter, kita hanya mendapatkan paket2 yang ber protokol UDP
+
+<img src="assets/soal 3/4.png">
+
+apabila kita mengecheck jawaban tersebut dengan netcat kita akan mendapatkan flagnya:
+
+<img src="assets/soal 3/5.png">
