@@ -107,8 +107,12 @@ voila! Kita mendapatkan correct answer dan flagnya.
 _Solusi_
 
 Untuk mendapatkan nilai checksum yang didapat dari header pada paket nomor 130, kita akan mengakses paket tersebut dan langsung lihat header di bagian UDPnya.
+
 ![no.4](./assets/soal4/no4.png)
+
 Dari situ kita dapatkan nilai _checksum_ nya adalah <ins>**0x18e5**<ins>
+
+![no.4_2](./assets/soal4/2.png)
 
 ### Soal-6
 
@@ -129,6 +133,8 @@ Setelah itu apabila kita buka <a href="https://www.dcode.fr/letter-number-cipher
 
 ![no.6a](./assets/soal6/no6a.png)
 Dapat dilihat bahwa hasil decode cipher dari source IP pada paket 7812 beragam, namun ambil yang hasilnya 6 huruf dan didapat bahwa jawabannya adalah _**JDRNJA**_.
+
+![no.6a](./assets/soal6/3.png)
 
 ## Stream	
 
@@ -267,6 +273,8 @@ Setelahnya kita akan menjawab pertanyaan-pertanyaan yang terdapat pada soal
   - 192.168.0.0 — 192.168.255.255
 
   Dari file pcap didapat IP yang merupakan IP public adalah <ins>**74.53.140.153**<ins>
+
+![no.5_4](./assets/soal5/4.png)
 
 ## Filtering 
 
