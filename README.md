@@ -159,3 +159,39 @@ dan apabila kita mengechecknya dengan netcat:
 <img src="assets/soal 1/16.png">
 
 voila! Kita mendapatkan correct answer dan flagnya.
+
+#### Soal 2
+
+<strong>Soal</strong>: Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer!
+
+Dari situ kita tahu bahwa web portal merupakan suatu file html yang terdapat pada protokol HTTP, sehingga kita akan melakukan display filter HTTP pada soal ini
+
+Langkah pengerjaan:
+
+pertama, buka soal2.pcapng, kemudian kita lakukan display filter HTTP sebagai berikut:
+
+<img src="assets/soal 2/1.png">
+
+setelah itu, kita lakukan search <strong>packet list</strong> "GET / HTTP/1.1" untuk mendapatkan <strong>request packet</strong> web portal, karena website portal biasanya bertipe request GET dan root folder "/" sebagai berikut:
+
+<img src="assets/soal 2/2.png">
+
+dari ip yang didapatkan sebagai berikut:
+
+<img src="assets/soal 2/3.png">
+
+kita kemudian melakukan filter ip destination dari request tersebut tetapi kita memfilter ip souce disini karena kita menginginkan response dari ip tersebut, sebagai berikut:
+
+<img src="assets/soal 2/4.png">
+
+dari hasil filter tersebut, kita menemukan beberapa response, tapi yang kita inginkan merupakan response yang memiliki tipe file text/html karena web portal merupakan sebuah website bertipe file html
+
+<img src="assets/soal 2/5.png">
+
+Dari situ, apabila kita membuka layer HTTP dari paket tersebut (paket 1092 [mengandung website portal]) kita akan melihat server yang digunakan packet tersebut
+
+<img src="assets/soal 2/6.png">
+
+apabila kita mengetesnya menggunakan netcat, kita akan mendapatkan flagnya
+
+<img src="assets/soal 2/7.png">
