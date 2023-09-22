@@ -85,3 +85,77 @@ Kelompok: D15
   <!-- no 10 -->
   <li>Sebutkan kredensial yang benar ketika user mencoba login menggunakan Telnet</li>
 </ol>
+
+### Jawaban
+
+#### Soal 1
+
+<strong>Soal</strong>: User melakukan berbagai aktivitas dengan menggunakan protokol FTP. Salah satunya adalah mengunggah suatu file.
+
+Dari soal di atas kita tahu bahwa kita akan melakukan filter terhadap display filter yang memiliki tipe protokol FTP (File Transfer Protocol) dari kata kunci "mengunggah suatu file" kemudian kita juga akan memfilter dari hasil filter protokol FTP tersebut kata kunci untuk mengupload / mengunggah suatu file, yakni "STOR" yang merupakan perintah upload file
+
+Berikut merupakan langkah pengerjaannya:
+
+Buka wireshark kemudian buka file soal1.pcapng
+
+<img src="assets/soal 1/1.png">
+<img src="assets/soal 1/2.png">
+
+maka akan muncul tampilan sebagai berikut
+<img src="assets/soal 1/3.png">
+
+Kemudian lakukan display filter dengan kata kunci "ftp" untuk memfilter response-request bertipe ftp
+
+<img src="assets/soal 1/4.png">
+<img src="assets/soal 1/5.png">
+
+setelah itu dari hasil display filter ftp, kita melakukan search packet list dengan keyword "STOR" yang menandakan pengunggahan suatu file
+
+<img src="assets/soal 1/6.png">
+
+<strong>soal poin a</strong>: Berapakah sequence number (raw) pada packet yang menunjukkan aktivitas tersebut?
+
+dari paket tersebut, kita analisis sequence numbernya di layer TCP (Transport Control Protocol)
+
+<img src="assets/soal 1/7.png">
+
+kita akan mendapat sequence number (raw) dari packet tersebut
+
+<img src="assets/soal 1/8.png">
+
+setelah kita membuka netcat soal akan muncul pertanyaan dan jika kita jawab soal poin a dengan sequence number (raw) yang kita dapatkan di atas, maka akan muncul sebagai tampilan berikut
+
+<img src="assets/soal 1/9.png">
+
+<strong>soal poin b</strong>: Berapakah acknowledge number (raw) pada packet yang menunjukkan aktivitas tersebut?
+
+dari TCP layer yang kita lihat sebelumnya, kita juga akan mendapat acknowledge number (raw) sebagai berikut:
+
+<img src="assets/soal 1/10.png">
+<img src="assets/soal 1/11.png">
+
+<strong>soal poin c</strong>: Berapakah sequence number (raw) pada packet yang menunjukkan response dari aktivitas tersebut?
+
+dari packet 147 (yang merupakan packet yang mengandung request file menggunakan protokol ftp) kita dapat melihat packet response request tersebut tepat di bawahnya (setelah kita melakukan filter ftp), yakni packet 149.
+
+<img src="assets/soal 1/12.png">
+
+Hal ini dapat kita konfirmasi dengan melihat source dan destination kedua packet yang saling matching sebagai berikut:
+
+<img src="assets/soal 1/13.png">
+
+dari situ kita akan mendapat sequence number (raw) nya dengan melihat pada layer tcp packet tersebut di bagian sequence number (raw) dan apabila kita mengechecknya menggunakan netcat pada poin c, kita akan mendapatkan hasil sebagai berikut:
+
+<img src="assets/soal 1/14.png">
+
+<strong>soal poin d</strong>: Berapakah acknowledge number (raw) pada packet yang menunjukkan response dari aktivitas tersebut?
+
+apabila kita melihat ack number dari packet tersebut, kita akan mendapatkan value sebagai berikut:
+
+<img src="assets/soal 1/15.png">
+
+dan apabila kita mengechecknya dengan netcat:
+
+<img src="assets/soal 1/16.png">
+
+voila! Kita mendapatkan correct answer dan flagnya.
