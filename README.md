@@ -231,3 +231,23 @@ Dari filter, kita hanya mendapatkan paket2 yang ber protokol UDP
 apabila kita mengecheck jawaban tersebut dengan netcat kita akan mendapatkan flagnya:
 
 <img src="assets/soal 3/5.png">
+
+#### Soal 8
+
+<strong>Soal</strong>: Berikan kueri filter sehingga wireshark hanya mengambil semua protokol paket yang menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abjad)!
+
+hal yang pertama dilakukan adalah membuka file soal6-9.pcapng dengan menggunakan wireshark dan membuka program netcat yang telah disediakan menggunakan linux terminal
+
+kemudian kita melakukan display filter pada wireshark dengan query sebagai berikut:
+
+```
+tcp.dstport == 80 || udp.dstport == 80
+```
+
+penjelasan dari filter tersebut adalah kita melakukan filter packet yang menuju port baik dengan tipe transfer protokol udp <code>udp.dstport == 80</code> maupun tcp <code>tcp.dstport == 80</code> karena kita harus mengurutkannya sesuai abjad (t terlebih dahulu sebelum u) dan menggabungkan hasil kedua query dengan <code>||</code> dihasilkanlah query sebagai berikut:
+
+<img src="assets/soal 8/1.png">
+
+apabila kita memeriksanya menggunakan netcat, kita akan mendapatkan flagnya:
+
+<img src="assets/soal 8/2.png">
