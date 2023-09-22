@@ -31,7 +31,7 @@
 _Solusi_
 
 Untuk mendapatkan nilai checksum yang didapat dari header pada paket nomor 130, kita akan mengakses paket tersebut dan langsung lihat header di bagian UDPnya.
-![no.4](./images/no4.png)
+![no.4](./assets/soal4/no4.png)
 Dari situ kita dapatkan nilai _checksum_ nya adalah <ins>**0x18e5**<ins>
 
 ### Soal-6
@@ -44,12 +44,12 @@ Setelah memikirkan teka-teki pada soal tersebut, terdapat poin-poin penting beri
 - Rentang huruf yang digunakan pada hasil cipher adalah huruf A-R, 1-18 dengan jawaban 6 huruf.
 - Cek source IP pada paket 7812 dari file pcap
 
-![no.6](./images/no6.png)
+![no.6](./assets/soal6/no6.png)
 Dari situ terlihat bahwa source IP pada paket 7812 adalah <ins>104.18.14.101<ins>
 
 Setelah itu apabila kita buka  <a href="https://www.dcode.fr/letter-number-cipher">_a1z26 cipher decoder_</a>, dan masukkan nomor-nomor pada IPnya, akan didapat jawabannya.
 
-![no.6a](./images/no6a.png)
+![no.6a](./assets/soal6/no6a.png)
 Dapat dilihat bahwa hasil decode cipher dari source IP pada paket 7812 beragam, namun ambil yang hasilnya 6 huruf dan didapat bahwa jawabannya adalah _**JDRNJA**_.
 
 
@@ -77,17 +77,17 @@ Dapat dilihat bahwa hasil decode cipher dari source IP pada paket 7812 beragam, 
 _Solusi_
 
 Untuk mengunlock locked zip yang terdapat pada portal praktikum (berisi netcat untuk menjawab pertanyaan soal ini), kita harus mencari passwordnya yang terletak pada paket yang terdapat di pcap file soal 5.
-![no.5](./images/no5.png)
+![no.5](./assets/soal5/no5.png)
 Setelah kita follow TCP Stream dari salah satu paket yang ada, terlihat bahwa passwordnya adalah **NWltcGxlUGFzNXdvcmQ=** yang apabila didecode dalam Base64 akan menjadi _5implePas5word_
 
 Setelahnya kita akan menjawab pertanyaan-pertanyaan yang terdapat pada soal
 
 - **Berapa banyak packet yang berhasil di capture dari file pcap tersebut?**
-![no.5a](./images/no5a.png)
+![no.5a](./assets/soal5/no5a.png)
 Terdapat **60** paket yang berhasil dicapture dari file pcap tersebut.
 
 - **Port berapakah pada server yang digunakan untuk service SMTP?**
-![no.5b](./images/no5b.png)
+![no.5b](./assets/soal5/no5b.png)
 Port pada server yang digunakan untuk service SMTP adalah port **25**
 
 - **Dari semua alamat IP yang tercapture, IP berapakah yang merupakan public IP?**
