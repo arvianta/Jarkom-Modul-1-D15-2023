@@ -9,22 +9,22 @@
 
 ## Daftar Isi
 
-1. [Addressing](#addressing)
+1. [Addressing :mailbox:](#addressing)
    1. [Soal 1](#soal-1)
    2. [soal 4](#soal-4)
    3. [soal 6](#soal-6)
-2. [Stream](#stream)
+2. [Stream :wavy_dash:](#stream)
    1. [Soal 2](#soal-2)
    2. [Soal 10](#soal-10)
-3. [Analysis](#Analysis)
+3. [Analysis :nerd_face:](#analysis)
    1. [Soal 3](#soal-3)
    2. [Soal 5](#soal-5)
-4. [Filtering](#filtering)
+4. [Filtering :checkered_flag:](#filtering)
    1. [Soal 7](#soal-7)
    2. [soal 8](#soal-8)
    3. [soal 9](#soal-9)
 
-## Addressing :mailbox:
+## Addressing
 
 ### Soal-1
 
@@ -130,7 +130,7 @@ Setelah itu apabila kita buka <a href="https://www.dcode.fr/letter-number-cipher
 ![no.6a](./assets/soal6/no6a.png)
 Dapat dilihat bahwa hasil decode cipher dari source IP pada paket 7812 beragam, namun ambil yang hasilnya 6 huruf dan didapat bahwa jawabannya adalah _**JDRNJA**_.
 
-## Stream :wavy_dash:	
+## Stream	
 
 ### Soal-2
 
@@ -190,7 +190,7 @@ Disitu tertera infomasi mengenai login dengan kredensial login ``ddhhaaffiinn`` 
 
 ![no.10_3](./assets/soal10/3.png)
 
-## Analysis :nerd_face:
+## Analysis
 
 ### Soal-3
 
@@ -268,7 +268,7 @@ Setelahnya kita akan menjawab pertanyaan-pertanyaan yang terdapat pada soal
 
   Dari file pcap didapat IP yang merupakan IP public adalah <ins>**74.53.140.153**<ins>
 
-## Filtering :checkered_flag:
+## Filtering 
 
 ### Soal-7
 
