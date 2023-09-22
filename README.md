@@ -24,7 +24,7 @@
    2. [soal 8](#soal-8)
    3. [soal 9](#soal-9)
 
-## Addressing
+## Addressing :mailbox:
 
 ### Soal-1
 
@@ -130,7 +130,7 @@ Setelah itu apabila kita buka <a href="https://www.dcode.fr/letter-number-cipher
 ![no.6a](./assets/soal6/no6a.png)
 Dapat dilihat bahwa hasil decode cipher dari source IP pada paket 7812 beragam, namun ambil yang hasilnya 6 huruf dan didapat bahwa jawabannya adalah _**JDRNJA**_.
 
-## Stream
+## Stream :wavy_dash:	
 
 ### Soal-2
 
@@ -172,7 +172,25 @@ apabila kita mengetesnya menggunakan netcat, kita akan mendapatkan flagnya
 
 ### Soal-10
 
-## Analysis
+**Sebutkan kredensial yang benar ketika user mencoba login menggunakan Telnet**
+
+_Solusi_
+
+Mencari kredensialnya dapat melalui paket yang berisi user melakukan login, dengan melakukan query filtering
+```
+telnet contains "Login"
+```
+![no.10](./assets/soal10/1.png)
+
+Kemudian follow TCP Stream
+
+![no.10_2](./assets/soal10/2.png)
+
+Disitu tertera infomasi mengenai login dengan kredensial login ``ddhhaaffiinn`` (aslinya hanya dhafin) dan password ``kesayangannyak0k0``.
+
+![no.10_3](./assets/soal10/3.png)
+
+## Analysis :nerd_face:
 
 ### Soal-3
 
@@ -232,11 +250,13 @@ Setelahnya kita akan menjawab pertanyaan-pertanyaan yang terdapat pada soal
 
 - **Berapa banyak packet yang berhasil di capture dari file pcap tersebut?**
   ![no.5a](./assets/soal5/no5a.png)
-  Terdapat **60** paket yang berhasil dicapture dari file pcap tersebut.
+  
+    Terdapat **60** paket yang berhasil dicapture dari file pcap tersebut.
 
 - **Port berapakah pada server yang digunakan untuk service SMTP?**
   ![no.5b](./assets/soal5/no5b.png)
-  Port pada server yang digunakan untuk service SMTP adalah port **25**
+  
+    Port pada server yang digunakan untuk service SMTP adalah port **25**
 
 - **Dari semua alamat IP yang tercapture, IP berapakah yang merupakan public IP?**
 
@@ -248,9 +268,23 @@ Setelahnya kita akan menjawab pertanyaan-pertanyaan yang terdapat pada soal
 
   Dari file pcap didapat IP yang merupakan IP public adalah <ins>**74.53.140.153**<ins>
 
-## Filtering
+## Filtering :checkered_flag:
 
 ### Soal-7
+
+**Berapa jumlah packet yang menuju IP 184.87.193.88?**
+
+_Solusi_
+
+Untuk mendapatkan jumlah paket yang menuju ke ip tersebut, dapat dilakukan filtering dengan syntax
+```
+ip.dst == 184.87.193.88
+```
+![no.7](./assets/soal7/1.png)
+
+Dapat dilihat bahwa terdapat **6** paket yang menuju ke IP ``184.87.193``.
+
+![no.7_2](./assets/soal7/2.png)
 
 ### Soal-8
 
